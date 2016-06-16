@@ -17,21 +17,13 @@ var bodyParser = require('body-parser');
 //
 var router = express();
 var server = http.createServer(router);
-
 router.use(bodyParser.json());
 
 router.use(express.static(path.resolve(__dirname, 'client')));
 
 // API Routes
 router.get('/api/v1/getData', function(request, response) {
-    var data = [
-        {name: 'Ryan', color: 'red'},
-        {name: 'Trenton', color: 'orange'},
-        {name: 'Rachel', color: 'yellow'},
-        {name: 'Nolan', color: 'green'},
-        {name: 'Trevor', color: 'blue'},
-        {name: 'Nathan', color: 'purple'}
-    ];
+    var data= energy;
     response.send(data);
 });
 
