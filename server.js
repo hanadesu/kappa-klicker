@@ -23,7 +23,9 @@ router.use(express.static(path.resolve(__dirname, 'client')));
 
 // API Routes
 router.get('/api/v1/getData', function(request, response) {
-    var data= energy;
+    var data= {};
+
+
     response.send(data);
 });
 

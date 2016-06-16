@@ -1,7 +1,7 @@
 /*global $*/
 $(document).ready(function(){
-	var words1 = ["nosy","scary","troubled","yummy","quickest","foolish","anxious","grumpy","roasted","tan","successful","tart","tender","mmute","zany","sticky","ratty"];
-	var words2 = ["dog","cat","fish","rat","snake","ant","turtle","spider","whale","duck","goose","deer","bear","chimp","snake","crab","pantherrr","Shaggy","Weeaboo"];
+	var words1 = ["ayylmao","scary","troubled","yummy","quickest","foolish","anxious","grumpy","roasted","tan","successful","tart","tender","mmute","sp00ky","sticky","ratty"];
+	var words2 = ["dog","cat","fish","rat","snake","ant","turtle","spider","whale","duck","goose","deer","bear","chimp","snake","crab","pantherrr","doge","Weeaboo"];
 	var randomword1;
 	var randomword2;
 	var randomnum;
@@ -69,7 +69,7 @@ $(document).ready(function(){
 		name:"Clicker Upgrade 4",
 		desc:"Adds 100% more kappa to each click.",
 		amount:0
-	}
+	};
 	$(".shopbuttoncontain").hover(function(){
 		$("#buyname").text(eval(this.id+".name"));
 		$("#buydesc").text(eval(this.id+".desc"));
@@ -144,7 +144,7 @@ $(document).ready(function(){
 		updatekappa();			
 		}
 		else if(clickup1.amount>=1)
-		alert("You cannot buy more than one.")
+		alert("You cannot buy more than one.");
 		else
 		alert("You cannot afford that!");	
 	});	
@@ -157,7 +157,7 @@ $(document).ready(function(){
 		updatekappa();		
 		}
 		else if(clickup2.amount>=1)
-		alert("You cannot buy more than one.")
+		alert("You cannot buy more than one.");
 		else
 		alert("You cannot afford that!");	
 	});	
@@ -170,7 +170,7 @@ $(document).ready(function(){
 		updatekappa();			
 		}
 		else if(clickup3.amount>=1)
-		alert("You cannot buy more than one.")
+		alert("You cannot buy more than one.");
 		else
 		alert("You cannot afford that!");	
 	});		
@@ -183,7 +183,7 @@ $(document).ready(function(){
 		updatekappa();			
 		}
 		else if(clickup4.amount>=1)
-		alert("You cannot buy more than one.")
+		alert("You cannot buy more than one.");
 		else
 		alert("You cannot afford that!");	
 	});		
@@ -197,7 +197,7 @@ $(document).ready(function(){
 		$("#kappagenerated").text(kps.toFixed(1));
 		if(kps > 100){
 			kps=100;
-			kpsd=100
+			kpsd=100;
 		}	
 		while(b<kpsd){
 			addkappa(generatename(),generatecolor(),0);
@@ -209,9 +209,9 @@ $(document).ready(function(){
 	var a = 0;
 	setInterval(function russiangeneratecalc(){
 		russianamount = russianamount + russian.amount * russian.produce;
-		console.log()
+		console.log();
 		if(russianamount>=1){
-			kappas = kappas+russianamount
+			kappas = kappas+russianamount;
 			while(a < russianamount){
 			addkappa(generatename(),generatecolor(),0);
 			russianamount-=1;
@@ -256,7 +256,7 @@ $(document).ready(function(){
 	setInterval(function clearchat(){
 		$("#chat").empty();
 		$("#chat").append('<li><span class="time"> '+realtime+' </span><span class="modclear">Chat was cleared by a moderator</span>');
-	},60000)
+	},60000);
 
 	$("#kappa").click(function(){
 		var plusamount = 1;	

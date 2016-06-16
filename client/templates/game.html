@@ -1,0 +1,79 @@
+	<div class="shopcover" id = "shopcover" >
+		<span class="shopcoverx" id="shopcoverx" ng-click=shopclose()>X</span>
+		<div class = "infobox">
+			<div>
+			<p id="buyname">Name</p>	
+			</div>	
+			<p id="buydesc">Description</p>
+			<div class="shopnumcontainer">
+			<p>Cost:</p><span id = "buycost"></span>
+			</div>
+			<div class="shopnumcontainer">
+			<p id="kpsptag">Kappas Per Second Produced:</p><span id="kpsp"></span>
+			</div>
+		</div>	
+		<div class="buycontainer">
+			<div class = "shopbuttoncontain" id = "russian" ng-click="russianbuy()">
+				<p class="shopname counter" id = "russianamount">{{russianamount}}</p>				
+				<p class="shopname">Russian Spammers</p>
+				</div>
+				<div class = "shopbuttoncontain" id = "viewbot" ng-click="viewbotbuy()">
+				<p class="shopname counter" id = "viewbotamount">{{viewbotamount}}</p>
+				<p class="shopname">Viewbots</p>
+				</div>	
+				<div class = "shopbuttoncontain" id = "botnet" ng-click="botnetbuy()">
+				<p class="shopname counter" id = "botnetamount">{{botnetamount}}</p>
+				<p class="shopname">Botnets</p>
+				</div>	
+				<div class = "shopbuttoncontain" id = "supercomputer" ng-click="supercomputerbuy()">
+				<p class="shopname counter" id="supercomputeramount">{{supercomputeramount}}</p>
+				<p class="shopname">Super Computer</p>
+				</div>	
+				<div class = "shopbuttoncontain" id = "clickup1" ng-click="clickup1buy()">
+				<p class="shopname counter" id="clickup1amount">{{clickup1amount}}</p>
+				<p class="shopname">Clicker Upgrade 1</p>
+				</div>	
+				<div class = "shopbuttoncontain" id = "clickup2" ng-click="clickup2buy()">
+				<p class="shopname counter" id="clickup2amount">{{clickup2amount}}</p>			
+				<p class="shopname">Clicker Upgrade 2</p>
+				</div>	
+				<div class = "shopbuttoncontain" id = "clickup3" ng-click="clickup3buy()">
+				<p class="shopname counter" id ="clickup3amount">{{clickup3amount}}</p>			
+				<p class="shopname">Clicker Upgrade 3</p>
+				</div>	
+				<div class = "shopbuttoncontain" id = "clickup4" ng-click="clickup4buy()">
+				<p class="shopname counter" id="clickup4amount">{{clickup4amount}}</p>
+				<p class="shopname">Clicker Upgrade 4</p>
+				</div>	
+			</div>	
+		</div>
+				
+	<div class = "flexcontainer">
+		<div class = "kappacontainer" id = "kappacontainer" ng-click="kappaklick()">
+			<img id = "kappa" src = "img/kappa1.png"/>
+		</div>
+		<div class = "optionscontainer">
+			<div class="maincontainer">
+				<a href="../">
+			<p class = "mainlink" ></p>
+		</a>
+		</div>
+			<p class = "kappaklickertitle">Kappa Klicker</p>
+			<div class="statscontainer">
+				<p class = "stats">Kappas:<span id = "kappacount">{{kappacount}}</span></p>
+				<p class = "stats">Kappas Generated Per Second:<span id = "kappagenerated">{{kappagenerated}}</span></p>
+			</div>
+			<div class = "shopscontainer" id = "shopscontainer" ng-click=openshop()>
+				<p>shop</p>
+			</div>						
+		</div>
+		<div class = "twitchchat" id = "twitchchat">
+			<div class="twitchheader">
+				SpamHater24
+			</div>
+			<div class = "twitchdummy"></div>	
+			<ul id = "chat">
+
+			</ul>	
+		</div>	
+	</div>	
