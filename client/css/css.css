@@ -165,7 +165,10 @@ p{
 	height:4em;
 	width:4em;
 	border:solid black;
-
+	
+}
+.shopbutton:hover{
+	background-color: #824BBB
 }
 .shopscontainer{
 	height:10%;
@@ -206,7 +209,7 @@ p{
 	flex-direction:column;
 	align-items:center;
 	justify-content:flex-start;
-	background-color:darkgray;
+	background-color:#FFFFFF;
 }
 .twitchheader{
 	display:flex;
