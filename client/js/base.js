@@ -16,7 +16,7 @@ angular.module('app', [
 
     }])
 
-    .controller('MyController', function($scope, $http) {
+    .controller('MyController', function($scope, $http, $interval) {
 console.log('controller');
         $scope.questions = [];
         $scope.currentQuestion = null;
@@ -134,8 +134,10 @@ console.log('controller');
 		$("#russianamount").text(russian.amount);
 		updatekappa();			
 		}
-		else
-		alert("You cannot afford that!");	
+		else {
+			alert("You cannot afford that!");
+		}
+			
 	};
 	$scope.viewbotbuy=function(){
 		if(kappas>=viewbot.cost){
@@ -223,11 +225,12 @@ console.log('controller');
 		alert("You cannot afford that!");	
 	};		
 	var b=0;
-	setInterval(
+	$interval(
 	function kappagenerator(){
 		kappas = kappas + (viewbot.produce * viewbot.amount) + (botnet.amount * botnet.produce) + (supercomputer.amount*supercomputer.produce);	
 		kps = russian.produce * russian.amount + viewbot.produce * viewbot.amount + botnet.amount * botnet.produce + supercomputer.amount*supercomputer.produce;
 		var kpsd = viewbot.produce * viewbot.amount + botnet.amount * botnet.produce + supercomputer.amount*supercomputer.produce;
+		console.log("things are happening " + kappas)
 		updatekappa();
 		$("#kappagenerated").text(kps.toFixed(1));
 		if(kps > 100){
@@ -242,7 +245,7 @@ console.log('controller');
 	},1000);
 	var russianamount = 0;
 	var a = 0;
-	setInterval(function russiangeneratecalc(){
+	$interval(function russiangeneratecalc(){
 		russianamount = russianamount + russian.amount * russian.produce;
 		console.log();
 		if(russianamount>=1){
@@ -256,7 +259,7 @@ console.log('controller');
 		}
 	},1000);						
 	function updatekappa(){
-		$("#kappacount").text(kappas.toFixed(1));
+		$scope.kappacount = kappas.toFixed(1);
 	}
 	function addkappa(username,color,mod,toadd){
 		var time = new Date();
@@ -288,7 +291,7 @@ console.log('controller');
 		color = '#'+Math.floor(Math.random()*16777215).toString(16);
 		return color;
 	}
-	setInterval(function clearchat(){
+	$interval(function clearchat(){
 		$("#chat").empty();
 		$("#chat").append('<li><span class="time"> '+realtime+' </span><span class="modclear">Chat was cleared by a moderator</span>');
 	},60000);
@@ -306,10 +309,10 @@ console.log('controller');
 		}
 		kappas = kappas + (plusamount);
 		updatekappa();
-		y=event.pageY-40;
-		$('<p class = "plus change" style="left:'+event.pageX+';top:'+y+'"id = "plus">+'+(plusamount)+'</p>').appendTo("#kappacontainer").animate({top:"-=50",opacity:"0"},500,function(){
-			$(this).remove();
-		});
+		// y=event.pageY-40;
+		// $('<p class = "plus change" style="left:'+event.pageX+';top:'+y+'"id = "plus">+'+(plusamount)+'</p>').appendTo("#kappacontainer").animate({top:"-=50",opacity:"0"},500,function(){
+		// 	$(this).remove();
+		// });
 		
 		//		addkappa(generatename(),generatecolor(),0);
 	};
