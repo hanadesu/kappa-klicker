@@ -25,18 +25,17 @@ p{
 .shopcover{
 	position:absolute;
 	height:100%;
-	width:100%;
+	width:30%;
 	background-color:black;
 	opacity:0.9;
 	z-index:3
 }
 .buycontainer{
 	height:100%;
-	position:absolute;
-	right:0;
 	color:white;
 	overflow:auto;
 	z-index:10;
+	width:100%;
 }
 .shopnumcontainer{
 	display:flex;
@@ -59,8 +58,12 @@ p{
 	font-size:2em;
 }
 .infobox{
+	position: absolute;
+	bottom: 0;
 	font-size:2em;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	max-height:200px;
+	width:100%;
 }
 .flexcontainer{
 	align-items: center;
@@ -69,7 +72,7 @@ p{
 }
 .twitchchat{
 	height:100%;
-	width:23em;
+	width:20%;
 	background-color:#EDEBEF;
     overflow: auto;	
 }
@@ -133,9 +136,12 @@ p{
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-size:2em;
 	color:black;
+	position: relative
 }
 .shopname{
-	font-size:2em;
+	font-size:1.4em;
+	padding-left:10px;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 .shopinfo{
 	background-color:green;
@@ -144,27 +150,66 @@ p{
 	display:initial;
 }
 .shopbuttoncontain{
-	width:30em;
-	background-color:darkgray;
-	display:flex;
-	align-items:center;
-	justify-content:center;	
-	font-size:1em;
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:black;	
-	outline:solid black;
-	padding-top:1px;
-	padding-bottom: 1px;
-	border-left: solid green;
-	cursor:pointer;
+	background-color: #6441a4;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 3rem;
+	height: 10em;
+	display: flex;
+    align-items: center;
+  	justify-content: flex-start;
+    position: relative;
+    /*width: 30%;*/
+    margin:auto;
+    margin-top:5px;
+    white-space: nowrap;
+    transition: all .2s;
+	max-height:40px;
+	
+}
+.shopbuttonopen{
+	background-color: #6441a4;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 3rem;
+	height: 10em;
+	display: flex;
+    align-items: center;
+  	justify-content: center;
+    position: relative;
+    width: 30%;
+    margin:auto;
+    margin-bottom: 50px;
+    white-space: nowrap;
+    transition: all .2s;
+	max-height:40px;
+}
+.shopopen{
+	background-color: #6441a4;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    position: relative;
+    white-space: nowrap;
+    transition: all .2s;
+}
+.shopopen:hover{
+	background-color:#824BBB;
 }
 .shopbuttoncontain:hover{
-	background-color:purple;
+	background-color:#824BBB;
 }
 .shopbutton{
 	height:4em;
 	width:4em;
-	border:solid black;
 	
 }
 .shopbutton:hover{
@@ -185,7 +230,7 @@ p{
 }
 .infobox{
 	height:80%;
-	width:60%;
+	width:100%;
 	background-color:darkgray;
 	position:absolute;
 	display:flex;
@@ -195,7 +240,7 @@ p{
 }
 .kappacontainer{
 	justify-content:center;
-	width:40%;
+	width:30%;
 	height:100%;
 	background-color:#393939;
 	display:flex;
@@ -204,7 +249,7 @@ p{
 }
 .optionscontainer{
 	height:100%;
-	width:40%;
+	width:50%;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -217,9 +262,9 @@ p{
 	justify-content:center;
 	align-items:center;
 	height:3em;
-	width:23em;
+	width:20%;
 	background-color:#EDEBEF;
-	border-bottom: solid gray;
+	border-bottom: solid lightgray;
 	border-bottom-width: 1px;
 	position:absolute;
 	top:0em;
@@ -248,14 +293,6 @@ li{
 a{
 	text-decoration: none;
 }
-.mainlink{
-	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
-	font-size: 1em;
-	color:white;
-}
-.mainlink:hover{
-	color:yellow;
-}
 @font-face {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;;
     src:url("../fonts/DIMIS___.TTF");
@@ -269,8 +306,36 @@ a{
 	font-size:4em;
 	height:20%;
 	color:#6600CC;
+	padding-top:5px;
+}
+@media screen and (max-width: 800px) {
+    .kappaklickertitle {
+        font-size:2em;
+    }
+    .shopscontainer {
+    	font-size:1em;
+    }
+    .shopbuttoncontain {
+    	font-size: 1.2rem;
+    }
+    .shopname {
+    	font-size:.5em;
+    }
+    
 }
 .full{
 	height:100%;
 	width:100%;
+}
+.chatmessage {
+	background-color: #EDEBEF; 
+}
+.font {
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+.shopdesc {
+	font-size:1.2em;
+}
+.centertext {
+	text-align: center;
 }

@@ -277,9 +277,9 @@ angular.module('app', [
 			minutes = time.getMinutes();
 		realtime = hour + ":" + minutes;
 		if (mod == 1)
-			message = '<li><span class="time"> ' + realtime + '</span><img class = "mod" src = "img/TwitchTurbo.png"/><span class = "username" style="color:' + color + '">' + username + '</span>:<img class = "kappachat" src = "img/kappa1.png"/></li>';
+			message = '<li class="chatmessage"><span class="time"> ' + realtime + '</span><img class = "mod chatmessage" src = "img/TwitchTurbo.png"/><span class = "username" style="color:' + color + '">' + username + '</span>:<img class = "kappachat chatmessage" src = "img/kappa1.png"/></li>';
 		else
-			message = '<li><span class="time"> ' + realtime + '</span><span class = "username" style="color:' + color + '">' + username + '</span>:<img class = "kappachat" src = "img/kappa1.png"/></li>';
+			message = '<li class="chatmessage"><span class="time"> ' + realtime + '</span><span class = "username" style="color:' + color + '">' + username + '</span>:<img class = "kappachat chatmessage" src = "img/kappa1.png"/></li>';
 		$("#chat").append(message);
 		$("#twitchchat").scrollTop($("#chat").height());
 		updatekappa();
@@ -299,7 +299,7 @@ angular.module('app', [
 	}
 	$interval(function clearchat() {
 		$("#chat").empty();
-		$("#chat").append('<li><span class="time"> ' + realtime + ' </span><span class="modclear">Chat was cleared by a moderator</span>');
+		$("#chat").append('<li class="chatmessage"><span class="time"> ' + realtime + ' </span><span class="chatmessage modclear">Chat was cleared by a moderator</span>');
 	}, 60000);
 
 	$scope.kappaklick = function() {
