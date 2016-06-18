@@ -120,7 +120,30 @@ angular.module('app', [
 			$("#kpsp").text(eval(this.id + ".produce"));
 		}
 	});
-
+		$scope.buy = function(upgrade, id) {
+		if (kappas >= upgrade.cost) {
+			upgrade.amount += 1;
+			kappas = kappas - upgrade.cost;
+			upgrade.cost = upgrade.cost + upgrade.cost * 1 / 5;
+			$(id).text(upgrade.amount);
+			updatekappa();
+		}
+		else
+			alert("You cannot afford that!");
+	}
+		$scope.clickupbuy = function(upgrade, id) {
+			if (kappas >= upgrade.cost && upgrade.amount < 1) {
+			upgrade.amount += 1;
+			kappas = kappas - upgrade.cost;
+			upgrade.cost = upgrade.cost + upgrade.cost * 1 / 5;
+			$(id).text(upgrade.amount);
+			updatekappa();
+		}
+		else if (upgrade.amount >= 1)
+			alert("You cannot buy more than one.");
+		else
+			alert("You cannot afford that!");
+	};
 	$scope.openshop = function() {
 		$("#shopcover").css("display", "initial");
 		$scope.shopshow = true
@@ -129,102 +152,30 @@ angular.module('app', [
 		$("#shopcover").css("display", "none");
 	};
 	$scope.russianbuy = function() {
-		if (kappas >= russian.cost) {
-			russian.amount += 1;
-			kappas = kappas - russian.cost;
-			russian.cost = russian.cost + russian.cost * 1 / 5;
-			$("#russianamount").text(russian.amount);
-			updatekappa();
-		}
-		else {
-			alert("You cannot afford that!");
-		}
+		$scope.buy(russian, "#russianamount");
 
 	};
 	$scope.viewbotbuy = function() {
-		if (kappas >= viewbot.cost) {
-			viewbot.amount += 1;
-			kappas = kappas - viewbot.cost;
-			viewbot.cost = viewbot.cost + viewbot.cost * 1 / 5;
-			$("#viewbotamount").text(viewbot.amount);
-			updatekappa();
-		}
-		else
-			alert("You cannot afford that!");
+		$scope.buy(viewbot, "#viewbotamount");
 	};
+
 	$scope.botnetbuy = function() {
-		if (kappas >= botnet.cost) {
-			botnet.amount += 1;
-			kappas = kappas - botnet.cost;
-			botnet.cost = botnet.cost + botnet.cost * 1 / 5;
-			$("#botnetamount").text(botnet.amount);
-			updatekappa();
-		}
-		else
-			alert("You cannot afford that!");
+		$scope.buy(botnet, "#botnetamount")
 	};
 	$scope.supercomputerbuy = function() {
-		if (kappas >= supercomputer.cost) {
-			supercomputer.amount += 1;
-			kappas = kappas - supercomputer.cost;
-			supercomputer.cost = supercomputer.cost + supercomputer.cost * 1 / 5;
-			$("#supercomputeramount").text(supercomputer.amount);
-			updatekappa();
-		}
-		else
-			alert("You cannot afford that!");
+		$scope.buy(supercomputer, "#supercomputeramount")
 	};
 	$scope.clickup1buy = function() {
-		if (kappas >= clickup1.cost && clickup1.amount < 1) {
-			clickup1.amount += 1;
-			kappas = kappas - clickup1.cost;
-			clickup1.cost = clickup1.cost + clickup1.cost * 1 / 5;
-			$("#clickup1amount").text(clickup1.amount);
-			updatekappa();
-		}
-		else if (clickup1.amount >= 1)
-			alert("You cannot buy more than one.");
-		else
-			alert("You cannot afford that!");
+		$scope.clickupbuy(clickup1, "#clickup1amount");	
 	};
 	$scope.clickup2buy = function() {
-		if (kappas >= clickup2.cost && clickup2.amount < 1) {
-			clickup2.amount += 1;
-			kappas = kappas - clickup2.cost;
-			clickup2.cost = clickup2.cost + clickup2.cost * 1 / 5;
-			$("#clickup2amount").text(clickup2.amount);
-			updatekappa();
-		}
-		else if (clickup2.amount >= 1)
-			alert("You cannot buy more than one.");
-		else
-			alert("You cannot afford that!");
+		$scope.clickupbuy(clickup2, "#clickup2amount");
 	};
 	$scope.clickup3buy = function() {
-		if (kappas >= clickup3.cost && clickup3.amount < 1) {
-			clickup3.amount += 1;
-			kappas = kappas - clickup3.cost;
-			clickup3.cost = clickup3.cost + clickup3.cost * 1 / 5;
-			$("#clickup3amount").text(clickup3.amount);
-			updatekappa();
-		}
-		else if (clickup3.amount >= 1)
-			alert("You cannot buy more than one.");
-		else
-			alert("You cannot afford that!");
+		$scope.clickupbuy(clickup3, "#clickup3amount");
 	}
 	$scope.clickup4buy = function() {
-		if (kappas >= clickup4.cost && clickup4.amount < 1) {
-			clickup4.amount += 1;
-			kappas = kappas - clickup4.cost;
-			clickup4.cost = clickup4.cost + clickup4.cost * 1 / 5;
-			$("#clickup4amount").text(clickup4.amount);
-			updatekappa();
-		}
-		else if (clickup4.amount >= 1)
-			alert("You cannot buy more than one.");
-		else
-			alert("You cannot afford that!");
+			$scope.clickupbuy(clickup4, "#clickup4amount");
 	};
 	var b = 0;
 	$interval(
